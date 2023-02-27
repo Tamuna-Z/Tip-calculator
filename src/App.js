@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+
+import "./App.css";
+import Splitter from "./Splitter";
+import {useState} from 'react';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const  [selectTip,setSelectTip]=useState([5,10,15,25,50,'Custom']);
+  return(
+    <div>
+      <Splitter selectTip={selectTip}/>
     </div>
-  );
+  )
+  
 }
 
 export default App;
