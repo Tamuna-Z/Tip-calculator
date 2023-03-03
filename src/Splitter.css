@@ -7,6 +7,7 @@
   align-items: center;
   text-align: center;
   margin: 0 auto;
+  ;
 }
 .mainContainer {
   background-color: #ffffff;
@@ -17,6 +18,11 @@
   box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
   border-radius: 25px 25px 0px 0px;
 }
+.billDiv{
+  margin-top: 32px;
+ 
+  
+}
 .billTittle {
   width: 47px;
   height: 24px;
@@ -26,14 +32,22 @@
   line-height: 24px;
   color: #5e7a7d;
 }
-.numberPeople {
+.buttonWrap{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 16px;
+}
+.inputBox {
   /* margin-top: 6px; */
   width: 311px;
   height: 48px;
   font-display: flex;
   background-color:#F3F9FA ;
+  z-index: 1;
 }
-.selectTip {
+.tipBox {
   width: 140px;
   height: 24px;
   font-family: SpaceMono;
@@ -47,6 +61,14 @@
   width: 150px;
   height: 48px;
   border-radius: 5px;
+  z-index: 2;
+}
+.customBox{
+  width: 140px;
+  height: 42px;
+  border-radius: 5px;
+  background-color: #00474B;
+
 }
 .peopleTitle {
   width: 186px;

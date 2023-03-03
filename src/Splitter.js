@@ -1,74 +1,86 @@
 import "./Splitter.css";
 import { useState } from "react";
-// import moneyImg from './images/money.png';
+import moneyImg from "./images/money.png";
+import personImage from "./images/person.png";
 
-function Splitter(props) {
+function Splitter() {
+  const [tipBox, setTipBox] = useState([5, 10, 15, 25, 50]);
+  const [inputBill, setInputBill] = useState("");
+  const [tipPercentage, setTipPercentage] = useState(5);
+  const [totalAmount, setTotalAmount] = useState(0);
 
-  const billAmountChange=(e)=>{
-    props.setInputBill(e.target.valueAsNumber)
+
+  const billAmountChange = (e) => {
+    setInputBill(e.target.valueAsNumber);
   };
-// custom tip
-  const tipChange=(e)=>{
-    props.setTipPercentage(e.target.valueAsNumber)
+  // custom tip
+  const tipChange = (e) => {
+    setTipPercentage(e.target.valueAsNumber);
   };
-  const calculateTotal =()=>{
-    const tipAmount= props.inputBill * (props.tipPercentage /100);
-    const total =Number(props.inputBill) + tipAmount;
-    props.setTotalAmount(total.toFixed(2));
-  }
+  const calculateTip = () => {
+    const tipAmount =inputBill * (tipPercentage / 100);
+    return tipAmount.toFixed(2);
+    // const total = Number(inputBill) + tipAmount;
+    // setTotalAmount(total.toFixed(2));
+  };
+
   return (
     <div className="app">
+      
       <div className="mainContainer">
-        <h2 className="billTitle">Bill</h2>
-        <input 
-        type="number"
-        className="numberPeople"
-        onChange={billAmountChange}
-        value={props.
-          inputBill}
-        >
-          {/* <img src={moneyImg} alt="moneyIcon"/> */}
-        </input>
+        <div className="billDiv">
+          <label className="billTitle">bill</label>
+          <div>
+            <input
+              type="number"
+              className="inputBox"
+              onChange={billAmountChange}
+              value={inputBill}
+            ></input>
+          </div>
+        </div>
         {/* select tip */}
-        <div className="selectTip">Select Tip %</div>
-        <div>
-          {props.selectTip.map((tip, index) => {
+        <div className="tipBox">Select Tip %</div>
+        <div className="buttonWrap">
+          {tipBox.map((tip, index) => {
             return (
               <button
-              className="tipButton"
+                className="tipButton"
                 key={index}
-                style ={{backgroundColor:props.selectTip === tip ? '#26C2AE' : '#00474B'
-              }}
-                onClick={()=>{
-                  props.setSelectTip(tip);
+                style={{
+                  backgroundColor:
+                    tipBox === tip ? "#26C2AE" : "#00474B",
                 }}
-              >{tip}$</button>
+                onClick={() => {
+                  setTipBox(tip);
+                }}
+              >
+                {tip}$
+              </button>
             );
           })}
+          <input className="customBox"
+          value={tipPercentage}
+          onChange={tipChange}
+          ></input>
         </div>
         <h4 className="peopleTitle">Number of People</h4>
         <div>
-
-        <input
-        type="number"
-        className="numberPeople">
-          {/* <img src={} alt=""/> */}
-        </input>
+          <input type="number" className="inputBox">
+            {/* <img src={personImage} alt="person"/> */}
+          </input>
         </div>
-        < div className="tipAmountDiv">
+        <div className="tipAmountDiv">
           <div>
-          <h4>Tip Amount</h4>
-          <p>/person</p>
+            <h4>Tip Amount:{calculateTip()}</h4>
+            <p>/person</p>
           </div>
           <div>
-          <h4>Total</h4>
-          <p>/person</p>
+            <h4>Total</h4>
+            <p>/person</p>
           </div>
           <button className="resetButton">RESET</button>
         </div>
-        
-          
-        
       </div>
     </div>
   );
