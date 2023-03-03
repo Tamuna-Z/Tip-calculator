@@ -5,20 +5,21 @@ import personImage from "./images/person.png";
 
 function Splitter() {
   const [tipBox, setTipBox] = useState([5, 10, 15, 25, 50]);
-  const [inputBill, setInputBill] = useState("");
-  const [tipPercentage, setTipPercentage] = useState(5);
-  const [totalAmount, setTotalAmount] = useState(0);
-
+  const [inputBill, setInputBill] = useState();
+  const [people, setPeople] = useState(null);
+  const [tipPercentage, setTipPercentage] = useState(null);
+  // const [totalAmount, setTotalAmount] = useState(0);
 
   const billAmountChange = (e) => {
-    setInputBill(e.target.valueAsNumber);
+    setInputBill(e.target.value);
   };
-  // custom tip
-  const tipChange = (e) => {
-    setTipPercentage(e.target.valueAsNumber);
-  };
+  console.log(tipPercentage);
+  // // custom tip
+  // const tipChange = (e) => {
+  //   setTipPercentage(e.target.valueAsNumber);
+  // };
   const calculateTip = () => {
-    const tipAmount =inputBill * (tipPercentage / 100);
+    const tipAmount = inputBill * (tipPercentage / 100);
     return tipAmount.toFixed(2);
     // const total = Number(inputBill) + tipAmount;
     // setTotalAmount(total.toFixed(2));
@@ -26,42 +27,48 @@ function Splitter() {
 
   return (
     <div className="app">
-      
       <div className="mainContainer">
         <div className="billDiv">
           <label className="billTitle">bill</label>
-          <div>
-            <input
-              type="number"
-              className="inputBox"
-              onChange={billAmountChange}
-              value={inputBill}
-            ></input>
-          </div>
+
+          <input
+            type="number"
+            className="inputBox"
+            placeholder="bill"
+            dir="rtl"
+            onChange={billAmountChange}
+            // value={inputBill}
+          >
+            {/* <img src={moneyImg} alt="currencyIcon"/>   */}
+          </input>
         </div>
         {/* select tip */}
         <div className="tipBox">Select Tip %</div>
         <div className="buttonWrap">
+
           {tipBox.map((tip, index) => {
+           
             return (
               <button
                 className="tipButton"
-                key={index}
+                key={tip}
                 style={{
-                  backgroundColor:
-                    tipBox === tip ? "#26C2AE" : "#00474B",
+                  backgroundColor: tipBox === tip ? "#26C2AE" : "#00474B",
                 }}
                 onClick={() => {
-                  setTipBox(tip);
+                  setTipPercentage(tip);
                 }}
+                
+
               >
                 {tip}$
               </button>
             );
           })}
-          <input className="customBox"
-          value={tipPercentage}
-          onChange={tipChange}
+          <input
+            className="customBox"
+            // value={tipPercentage}
+            // onChange={tipChange}
           ></input>
         </div>
         <h4 className="peopleTitle">Number of People</h4>
@@ -71,14 +78,8 @@ function Splitter() {
           </input>
         </div>
         <div className="tipAmountDiv">
-          <div>
-            <h4>Tip Amount:{calculateTip()}</h4>
-            <p>/person</p>
-          </div>
-          <div>
-            <h4>Total</h4>
-            <p>/person</p>
-          </div>
+          <div>Tip Amount /person{}</div>
+          <div> total / person {}</div>
           <button className="resetButton">RESET</button>
         </div>
       </div>

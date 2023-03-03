@@ -45,8 +45,25 @@
   height: 48px;
   font-display: flex;
   background-color:#F3F9FA ;
-  z-index: 1;
+ 
 }
+/* .inputIcon{
+  position: relative;
+}
+.inputIcon > i {
+  position: absolute;
+  display: block;
+  transform: translate(0, -50%);
+  top: 50%;
+  pointer-events: none;
+  width: 25px;
+  text-align: center;
+  font-style: normal;
+} */
+/* .inputIcon > input {
+  padding-left: 25px;
+  padding-right: 0;
+} */
 .tipBox {
   width: 140px;
   height: 24px;
@@ -67,7 +84,7 @@
   width: 140px;
   height: 42px;
   border-radius: 5px;
-  background-color: #00474B;
+  background-color: #547878;
 
 }
 .peopleTitle {
