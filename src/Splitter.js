@@ -29,10 +29,14 @@ function Splitter() {
   return (
   
     <div className="app">
+      {/* <div>
+      <h1>SPLITER</h1> 
+      </div> */}
+      
       <div className="mainContainer">
-      <div>Bill:{inputBill}</div>
+      {/* <div>Bill:{inputBill}</div>
       <div>people{people}</div>
-      <div>tip:{ tipPercentage}</div>
+      <div>tip:{ tipPercentage}</div> */}
       
       
         <div className="billDiv">
@@ -59,11 +63,12 @@ function Splitter() {
               <button
                 className="tipButton"
                 key={index}
-                // style={{
-                //   backgroundColor: tipBox === tip ? "#26C2AE" : "#00474B",
-                // }}
+                style={{
+                  backgroundColor: tipBox === tip ? "#26C2AE" : "#00474B",
+                }}
                 onClick={() => {
                   setTipPercentage(0.1);
+                  
                   console.log(tip);
 
 
