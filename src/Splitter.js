@@ -5,29 +5,36 @@ import personImage from "./images/person.png";
 
 function Splitter() {
   const [tipBox, setTipBox] = useState([5, 10, 15, 25, 50]);
-  const [inputBill, setInputBill] = useState();
-  const [people, setPeople] = useState(null);
-  const [tipPercentage, setTipPercentage] = useState(null);
+  const [inputBill, setInputBill] = useState(0);
+  const [people, setPeople] = useState(0);
+  const [tipPercentage, setTipPercentage] = useState(0);
   // const [totalAmount, setTotalAmount] = useState(0);
+  console.log( typeof inputBill,people,tipPercentage);
 
   const billAmountChange = (e) => {
     setInputBill(e.target.value);
   };
-  console.log(tipPercentage);
+  
   // // custom tip
   // const tipChange = (e) => {
   //   setTipPercentage(e.target.valueAsNumber);
   // };
-  const calculateTip = () => {
-    const tipAmount = inputBill * (tipPercentage / 100);
-    return tipAmount.toFixed(2);
-    // const total = Number(inputBill) + tipAmount;
-    // setTotalAmount(total.toFixed(2));
-  };
+  // const calculateTip = () => {
+  //   const tipAmount = inputBill * (tipPercentage / 100);
+  //   return tipAmount.toFixed(2);
+  //   // const total = Number(inputBill) + tipAmount;
+  //   // setTotalAmount(total.toFixed(2));
+  // };
 
   return (
+  
     <div className="app">
       <div className="mainContainer">
+      <div>Bill:{inputBill}</div>
+      <div>people{people}</div>
+      <div>tip:{ tipPercentage}</div>
+      
+      
         <div className="billDiv">
           <label className="billTitle">bill</label>
 
@@ -51,12 +58,15 @@ function Splitter() {
             return (
               <button
                 className="tipButton"
-                key={tip}
-                style={{
-                  backgroundColor: tipBox === tip ? "#26C2AE" : "#00474B",
-                }}
+                key={index}
+                // style={{
+                //   backgroundColor: tipBox === tip ? "#26C2AE" : "#00474B",
+                // }}
                 onClick={() => {
-                  setTipPercentage(tip);
+                  setTipPercentage(0.1);
+                  console.log(tip);
+
+
                 }}
                 
 
@@ -73,13 +83,19 @@ function Splitter() {
         </div>
         <h4 className="peopleTitle">Number of People</h4>
         <div>
-          <input type="number" className="inputBox">
+          <input
+           type="number"
+           className="inputBox"
+           onChange={(e) =>{
+            setPeople(e.target.valueAsNumber);
+           }}
+           >
             {/* <img src={personImage} alt="person"/> */}
           </input>
         </div>
         <div className="tipAmountDiv">
-          <div>Tip Amount /person{}</div>
-          <div> total / person {}</div>
+          <div>Tip Amount /person{(inputBill * tipPercentage / people).toFixed(2)}</div>
+          <div> total / person {(inputBill * (1 + tipPercentage) /people).toFixed(2)}</div>
           <button className="resetButton">RESET</button>
         </div>
       </div>
