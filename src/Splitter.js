@@ -9,6 +9,13 @@ function Splitter() {
   const [inputBill, setInputBill] = useState(0);
   const [people, setPeople] = useState(0);
   const [tipPercentage, setTipPercentage] = useState(0);
+  const[clickedIndex,setClickedIndex]=useState(null);
+
+  const colorChange =(index)=>{
+    setClickedIndex(index);
+  };
+
+  // const backgroundColor= clicked ? "#26C2AE" : "#00474b";
 
   const billAmountChange = (e) => {
     setInputBill(e.target.value);
@@ -42,9 +49,12 @@ function Splitter() {
         </div>
         <div>
           <input
+          //  inputmode="numeric"
+            // pattern="^\d+(\.\d{1,2})?$"
+             placeholder="$"
             type="number"
             className="inputBox"
-            placeholder="bill"
+            
             dir="rtl"
             onChange={billAmountChange}
             // value={inputBill}
@@ -61,12 +71,16 @@ function Splitter() {
               <button
                 className="tipButton"
                 key={index}
-                style={{
-                  backgroundColor: tipBox === tip ? "#26C2AE" : " #00474b"
+                // style={{backgroundColor}}
+                onClick={()=>{
+                  colorChange(index)
                 }}
-                onClick={() => {
-                  setTipPercentage(tip);
+                style ={{backgroundColor : clickedIndex === index ? "#26C2AE" :"#00474b"
                 }}
+              //   onClick={() => {
+              //     setTipPercentage(tip);
+              //   }
+              // }
               >
                 {tip}$
               </button>
