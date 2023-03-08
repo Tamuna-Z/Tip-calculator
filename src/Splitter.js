@@ -1,5 +1,5 @@
 import "./Splitter.css";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import moneyImg from "./images/money.png";
 import personImage from "./images/person.png";
 import logo from "./images/logo.png";
@@ -7,8 +7,8 @@ import logo from "./images/logo.png";
 function Splitter() {
   const [tipBox, setTipBox] = useState([5, 10, 15, 25, 50]);
   const [inputBill, setInputBill] = useState(0);
-  const [people, setPeople] = useState(0);
   const [tipPercentage, setTipPercentage] = useState(0);
+  const [people, setPeople] = useState(0);
   const [clickedIndex, setClickedIndex] = useState(null);
 
   const colorChange = (index) => {
@@ -16,8 +16,25 @@ function Splitter() {
   };
 
   const billAmountChange = (e) => {
-    setInputBill(e.target.value);
+    setInputBill(parseInt(e.target.value));
   };
+  console.log(inputBill);
+
+  let calculateTotalTip = (inputBill * tipPercentage /100) /people;
+let calculateTipPerPerson=(calculateTotalTip + inputBill) /people ;
+   
+  
+
+
+console.log(tipPercentage);
+// useEffect(()=>{
+//   if(inputBill > 0 && people > 0 && tipPercentage > 0){
+//     setCalculatedTip(inputBill * (tipPercentage /100));
+//     setTotal(calculatedTip + inputBill)
+//   }
+// },[inputBill, people,tipPercentage,calculatedTip]);
+
+ 
 
   return (
     <div className="app">
@@ -31,8 +48,6 @@ function Splitter() {
         </div>
         <div>
           <input
-            //  inputmode="numeric"
-            // pattern="^\d+(\.\d{1,2})?$"
             placeholder="$"
             type="number"
             className="inputBox"
@@ -51,6 +66,8 @@ function Splitter() {
                 key={index}
                 onClick={() => {
                   colorChange(index);
+                  // აქ უნდა იყოს 
+                  setTipPercentage(tip);
                 }}
                 style={{
                   backgroundColor:
@@ -61,30 +78,37 @@ function Splitter() {
 
           <input
             className="customBox"
-            placeholder="CUSTOM"
+            placeholder="Custom"
           ></input>
         </div>
 
-        <h4 className="peopleTitle">Number of People</h4>
-        <div>
+       <div className="peopleContainer">
+       <div className="peopleWrapper">
+          <label className="peopleTitle">Number of People</label>
+        <p>Error </p></div>
+        
+        <div className="inputIcon">
           <input
             type="number"
-            className="inputBox"
+            className="icon"
             onChange={(e) => {
-              setPeople(e.target.valueAsNumber);
+              setPeople(parseFloat(e.target.valueAsNumber));
             }}
-          ></input>
+          /><img src={personImage}/>
+          
         </div>
+       </div>
 
 
-        <div className="tipAmountDiv">
-          <div>
-            Tip Amount /person
-            {((inputBill * tipPercentage) / 100 / people).toFixed(2)}
+        <div className="tipAmountContainer">
+          <div className="tipResult">
+            <h3>Tip Amount</h3>
+            <p>{calculateTotalTip.toFixed(2)}</p>
           </div>
-          <div>
-            total / person
-            {((inputBill * (1 + tipPercentage)) / people).toFixed(2)}
+          <div className="totalResult">
+          <h3>Total Amount</h3>
+            {calculateTipPerPerson.toFixed(2)
+            }
           </div>
           
           <button className="resetButton">RESET</button>

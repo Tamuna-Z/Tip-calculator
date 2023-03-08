@@ -1,3 +1,7 @@
+body{
+  font-family: SpaceMono ;
+  
+}
 .app {
   background-color: #C5E4E7;
   width: 375px;
@@ -12,7 +16,7 @@
 .mainContainer {
   background-color: #ffffff;
   width: 375px;
-  height: 789px;
+  min-height:789px;
   margin-top: 40px;
   box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
   border-radius: 25px 25px 0px 0px;
@@ -24,52 +28,25 @@
   padding-left: 32px;
 
 }
-.billTittle {
-  width: 47px;
-  height: 24px;
+.inputBox{
+  width: 311px;
+  height: 48px;
   font-family: SpaceMono;
   font-weight: 700px;
   font-size: 16px;
   line-height: 24px;
-  color: #5e7a7d;
+  background-color: #F3F9FA;
 }
+
+/* buttons */
 .buttonWrap{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   column-gap: 16px;
   row-gap: 16px;
+  margin-bottom: 38px;
 }
-.inputBox {
-  /* margin-top: 6px; */
-  width: 311px;
-  height: 48px;
-  font-display: flex;
-  background-color:#F3F9FA ;
-  text-align: left;
-  padding-left: 10px;
- 
-  /* margin-top: 6px; */
- 
- 
-}
-/* .inputIcon{
-  position: relative;
-}
-.inputIcon > i {
-  position: absolute;
-  display: block;
-  transform: translate(0, -50%);
-  top: 50%;
-  pointer-events: none;
-  width: 25px;
-  text-align: center;
-  font-style: normal;
-} */
-/* .inputIcon > input {
-  padding-left: 25px;
-  padding-right: 0;
-} */
 .tipBox {
   width: 140px;
   height: 24px;
@@ -88,14 +65,20 @@
   z-index: 2;
 }
 .customBox{
- 
   width: 140px;
   height: 42px;
   border-radius: 5px;
   background-color: #F3F9FA;
   color: #547878;
-  text-align: center;
 }
+::placeholder{
+  text-align: right;
+  font-family: SpaceMono;
+  font-weight: 700px;
+  line-height: 36px;
+  font-size: 24px;
+}
+/*Number of  People */
 .peopleTitle {
   width: 186px;
   height: 24px;
@@ -105,8 +88,23 @@
   line-height: 24px;
   color: #5e7a7d;
   margin-top: 38px;
+  
 }
-.tipAmountDiv {
+.inputIcon{
+  position: relative;
+}
+.icon {
+  width: 311px;
+  height: 48px;
+  background-color:#F3F9FA ;
+  /* position: absolute;
+   margin-top: 50%;
+  margin-left:2px;
+  transform: translate(-50%);  */
+ 
+}
+/* tipAmount */
+.tipAmountContainer {
   width: 327px;
   height: 257px;
   border-radius: 15px;
@@ -114,14 +112,9 @@
   padding-top: 20px;
   margin-top: 32px;
   margin-left: 24px;
+  margin-bottom: 32px;
 }
-h4 {
-  font-family: SpaceMono;
-  font-weight: 700px;
-  font-size: 16px;
-  line-height: 24px;
-  color: #ffffff;
-}
+
 p {
   font-family: SpaceMono;
   font-weight: 700px;
