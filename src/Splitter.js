@@ -84,6 +84,14 @@ const showTotal =!(calculateTipPerPerson.toFixed(2) === 'NaN' || calculateTipPer
         <div className="inputIcon">
           <input
             type="number"
+            value={people}
+            min={0}
+            step={1}
+            onKeyDown ={(e)=>{
+              if(e.key === '.'){
+                e.preventDefault()
+              }
+            }}
             className="icon"
             onChange={(e) => {
               setPeople(parseFloat(e.target.valueAsNumber));
