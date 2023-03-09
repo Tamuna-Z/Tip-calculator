@@ -8,10 +8,9 @@ body{
   height: 933px;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
   margin: 0 auto;
-  padding-top: 50px
-  ;
+  padding-top: 50px;
 }
 .mainContainer {
   background-color: #ffffff;
@@ -26,9 +25,7 @@ body{
   display: flex;
   padding-top: 32px;
   padding-left: 32px;
-
 }
-
 .billTitle{
   width: 47px;
   height: 24px;
@@ -46,6 +43,13 @@ body{
   font-size: 16px;
   line-height: 24px;
   background-color: #F3F9FA;
+  margin-left: 32px;
+}
+ .inputMoney{
+  position: absolute;
+  margin-top: 16px;
+ margin-left:45px;
+
 }
 
 /* buttons */
@@ -67,6 +71,7 @@ body{
   color: #5e7a7d;
   margin-top: 32px;
   margin-bottom: 16px;
+  margin-left: 32px;
 }
 .tipButton {
   width: 150px;
@@ -81,7 +86,7 @@ body{
   background-color: #F3F9FA;
   color: #547878;
 }
-::placeholder{
+::placeholder {
   text-align: right;
   font-family: SpaceMono;
   font-weight: 700px;
@@ -96,8 +101,7 @@ body{
   font-weight: 700px;
   font-size: 16px;
   line-height: 24px;
-  color: #5e7a7d;
-   
+  color: #5e7a7d;  
 }
 .peopleContainer{
   margin-left: 32px;
@@ -106,6 +110,9 @@ body{
   text-align: left;
   font-family: SpaceMono;
 }
+.errorDiv{
+  color: red;
+}
 .inputIcon{
   position: relative;
 }
@@ -113,11 +120,15 @@ body{
   width: 311px;
   height: 48px;
   background-color:#F3F9FA ;
-  /* position: absolute;
-   margin-top: 50%;
-  margin-left:2px;
-  transform: translate(-50%);  */
+
+  
  
+}
+
+.personIcon{
+  position: absolute;
+  margin-top: 16px;
+ margin-left:20px;
 }
 /* tipAmount */
 .tipAmountContainer {
@@ -126,12 +137,17 @@ body{
   border-radius: 15px;
   background-color: #00474b;
   padding-top: 20px;
+  padding-left: 32px;
+  padding-right: 22px;
   margin-top: 32px;
   margin-left: 24px;
   margin-bottom: 32px;
 }
 .tipResult,.totalResult{
   display: flex;
+  justify-content: space-between;
+
+ 
 }
 
 p {
@@ -141,6 +157,14 @@ p {
   line-height: 20px;
   color: #7f9d9f;
 }
+h3{
+  font-family: SpaceMono;
+  font-weight: 700px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+
+}
 .resetButton {
   width: 281px;
   height: 48px;
@@ -148,3 +172,17 @@ p {
   background-color: #26c2ae;
   margin-bottom: 33px;
 }
+/* responsive */
+/* @media(min-width:1440px){
+  .app{
+    background-color: #C5E4E7;
+    width: 1440px;
+    height: 1024px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding-top:163px 260px 239px 260px;
+  }
+} */
