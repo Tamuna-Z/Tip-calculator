@@ -10,6 +10,7 @@ function Splitter() {
   const [tipPercentage, setTipPercentage] = useState(0);
   const [people, setPeople] = useState(0);
   const [clickedIndex, setClickedIndex] = useState(null);
+  const [peopleError, setPeopleError]=useState('');
 
   const colorChange = (index) => {
     setClickedIndex(index);
@@ -26,7 +27,14 @@ let calculateTipPerPerson =(inputBill/people) +calculateTotalTip;
 const showTip =!(calculateTotalTip.toFixed(2) === 'NaN'
 || calculateTotalTip.toFixed(2) === 'Infinity');
 const showTotal =!(calculateTipPerPerson.toFixed(2) === 'NaN' || calculateTipPerPerson.toFixed(2) === 'Infinity');
+ useEffect(() =>{
+  if(people === 0){
+    setPeopleError(`can't be zero`);
+  }else{
+    setPeopleError('');
+  }
 
+ },[people]);
    
   
   return (
@@ -96,7 +104,8 @@ const showTotal =!(calculateTipPerPerson.toFixed(2) === 'NaN' || calculateTipPer
             onChange={(e) => {
               setPeople(parseFloat(e.target.valueAsNumber));
             }}
-          /><img src={personImage}/>
+          /><div>{peopleError}</div>
+          <img src={personImage}/>
           
         </div>
        </div>
