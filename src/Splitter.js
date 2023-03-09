@@ -23,20 +23,12 @@ function Splitter() {
   let calculateTotalTip = (inputBill * tipPercentage /100) / people;
 // let calculateTipPerPerson=(calculateTotalTip / people) + inputBill ;
 let calculateTipPerPerson =(inputBill/people) +calculateTotalTip;
+const showTip =!(calculateTotalTip.toFixed(2) === 'NaN'
+|| calculateTotalTip.toFixed(2) === 'Infinity');
+const showTotal =!(calculateTipPerPerson.toFixed(2) === 'NaN' || calculateTipPerPerson.toFixed(2) === 'Infinity');
+
    
   
-
-
-console.log(tipPercentage);
-// useEffect(()=>{
-//   if(inputBill > 0 && people > 0 && tipPercentage > 0){
-//     setCalculatedTip(inputBill * (tipPercentage /100));
-//     setTotal(calculatedTip + inputBill)
-//   }
-// },[inputBill, people,tipPercentage,calculatedTip]);
-
- 
-
   return (
     <div className="app">
       <div>
@@ -105,13 +97,14 @@ console.log(tipPercentage);
         <div className="tipAmountContainer">
           <div className="tipResult">
             <div><h3>Tip Amount</h3></div>
-            <div><p>{calculateTotalTip.toFixed(2)}</p></div>
+            <div><p>{showTip ? calculateTotalTip.toFixed(2):"0.00"  }</p></div>
           </div>
           <div className="totalResult">
           <div><h3>Total Amount</h3></div>
-           <div> {calculateTipPerPerson.toFixed(2)
+           <div> { showTotal ?calculateTipPerPerson.toFixed(2) : "0.00"  
             }</div>
           </div>
+
           
           <button className="resetButton">RESET</button>
         </div>
