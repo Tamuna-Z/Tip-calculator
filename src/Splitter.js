@@ -20,8 +20,9 @@ function Splitter() {
   };
   console.log(inputBill);
 
-  let calculateTotalTip = (inputBill * tipPercentage /100) /people;
-let calculateTipPerPerson=(calculateTotalTip + inputBill) /people ;
+  let calculateTotalTip = (inputBill * tipPercentage /100) / people;
+// let calculateTipPerPerson=(calculateTotalTip / people) + inputBill ;
+let calculateTipPerPerson =(inputBill/people) +calculateTotalTip;
    
   
 
@@ -43,8 +44,8 @@ console.log(tipPercentage);
       </div>
 
       <div className="mainContainer">
-        <div className="leftBill">
-          <label className="billTitle">bill</label>
+        <div className="billDiv">
+          <label className="billTitle">Bill</label>
         </div>
         <div>
           <input
@@ -85,7 +86,8 @@ console.log(tipPercentage);
        <div className="peopleContainer">
        <div className="peopleWrapper">
           <label className="peopleTitle">Number of People</label>
-        <p>Error </p></div>
+        {/* <p>Error </p> */}
+        </div>
         
         <div className="inputIcon">
           <input
@@ -102,13 +104,13 @@ console.log(tipPercentage);
 
         <div className="tipAmountContainer">
           <div className="tipResult">
-            <h3>Tip Amount</h3>
-            <p>{calculateTotalTip.toFixed(2)}</p>
+            <div><h3>Tip Amount</h3></div>
+            <div><p>{calculateTotalTip.toFixed(2)}</p></div>
           </div>
           <div className="totalResult">
-          <h3>Total Amount</h3>
-            {calculateTipPerPerson.toFixed(2)
-            }
+          <div><h3>Total Amount</h3></div>
+           <div> {calculateTipPerPerson.toFixed(2)
+            }</div>
           </div>
           
           <button className="resetButton">RESET</button>
