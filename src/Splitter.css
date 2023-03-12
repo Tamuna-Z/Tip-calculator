@@ -102,6 +102,7 @@ body{
   font-weight: 700px;
   line-height: 36px;
   font-size: 24px;
+  padding-right: 10px;
 }
 /*Number of  People */
 .peopleTitle {
@@ -130,9 +131,6 @@ body{
   width: 311px;
   height: 48px;
   background-color:#F3F9FA ;
-
-  
- 
 }
 
 .personIcon{
@@ -156,10 +154,7 @@ body{
 .tipResult,.totalResult{
   display: flex;
   justify-content: space-around;
-
- 
 }
-
 .zero {
   padding: 15px;
   font-family: 'Space Mono', monospace;

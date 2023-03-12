@@ -51,6 +51,7 @@ function Splitter() {
       setTipPercentage(0);
       setPeople(0);
 }
+
   }
   return (
     <div className="app">
@@ -83,6 +84,7 @@ function Splitter() {
                     <button
                       className="tipButton"
                       key={index}
+                      value={tipPercentage}
                       onClick={() => {
                         colorChange(index);
                         setTipPercentage(tip);
@@ -99,6 +101,7 @@ function Splitter() {
 
                 <input className="customBox" 
                 type="number"
+                value={tipPercentage}
                 placeholder="Custom"
                 onChange={customTip}
                 ></input>
