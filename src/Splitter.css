@@ -1,6 +1,11 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body{
-  font-family: SpaceMono ;
-  
+  font-family: 'Space Mono', monospace;
 }
 .app {
   background-color: #C5E4E7;
@@ -21,6 +26,11 @@ body{
   border-radius: 25px 25px 0px 0px;
   /* align-content: flex-start; */
 }
+.logoImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .billDiv{
   display: flex;
   padding-top: 32px;
@@ -30,7 +40,7 @@ body{
   width: 47px;
   height: 24px;
   color: #5E7A7D;
-  font-family: SpaceMono;
+  font-family: 'Space Mono', monospace;
   font-weight: 700px;
   font-size: 16px;
   line-height: 24px;
@@ -38,7 +48,7 @@ body{
 .inputBox{
   width: 311px;
   height: 48px;
-  font-family: SpaceMono;
+  font-family: 'Space Mono', monospace;
   font-weight: 700px;
   font-size: 16px;
   line-height: 24px;
@@ -64,7 +74,7 @@ body{
 .tipBox {
   width: 140px;
   height: 24px;
-  font-family: SpaceMono;
+  font-family: 'Space Mono', monospace;
   font-weight: 700px;
   font-size: 16px;
   line-height: 24px;
@@ -88,7 +98,7 @@ body{
 }
 ::placeholder {
   text-align: right;
-  font-family: SpaceMono;
+  font-family: 'Space Mono', monospace;
   font-weight: 700px;
   line-height: 36px;
   font-size: 24px;
@@ -97,7 +107,7 @@ body{
 .peopleTitle {
   width: 186px;
   height: 24px;
-  font-family: SpaceMono;
+  font-family: 'Space Mono', monospace;
   font-weight: 700px;
   font-size: 16px;
   line-height: 24px;
@@ -137,40 +147,58 @@ body{
   border-radius: 15px;
   background-color: #00474b;
   padding-top: 20px;
-  padding-left: 32px;
-  padding-right: 22px;
+  /* padding-left: 32px;
+  padding-right: 22px; */
   margin-top: 32px;
   margin-left: 24px;
   margin-bottom: 32px;
 }
 .tipResult,.totalResult{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 
  
 }
 
-p {
-  font-family: SpaceMono;
+.zero {
+  padding: 15px;
+  font-family: 'Space Mono', monospace;
   font-weight: 700px;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 20px;
-  color: #7f9d9f;
+  color: #7F9D9F;
+}
+.personP{
+  color:#7F9D9F;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 13px;
+  line-height:19.25px;
 }
 h3{
-  font-family: SpaceMono;
+  font-family: 'Space Mono', monospace;
   font-weight: 700px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   color: #ffffff;
+  /* padding: 22px; */
 
 }
+.totalDiv{
+  margin-top: 25px;
+}
+.resetButtonDiv{
+  display: flex;
+  margin-top: 35px;
+}
+
 .resetButton {
   width: 281px;
   height: 48px;
   border-radius: 5px;
   background-color: #26c2ae;
   margin-bottom: 33px;
+ margin: 0 auto;
 }
 /* responsive */
 /* @media(min-width:1440px){

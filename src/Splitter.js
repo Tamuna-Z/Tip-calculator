@@ -5,13 +5,13 @@ import personImage from "./images/person.png";
 import logo from "./images/logo.png";
 
 function Splitter() {
-  const [tipBox, setTipBox] = useState([5, 10, 15, 25, 50]);
-  const [inputBill, setInputBill] = useState(0);
-  const [tipPercentage, setTipPercentage] = useState(0);
+  const tipBox= [5, 10, 15, 25, 50];
+  const [inputBill, setInputBill] = useState('null');
+  const [tipPercentage, setTipPercentage] = useState(null);
   
-  const [people, setPeople] = useState(0);
+  const [people, setPeople] = useState(null);
   const [clickedIndex, setClickedIndex] = useState(null);
-  const [peopleError, setPeopleError] = useState("");
+  const [peopleError, setPeopleError] = useState(null);
 
   const colorChange = (index) => {
     setClickedIndex(index);
@@ -45,9 +45,16 @@ function Splitter() {
     }
   }, [people]);
 
+  const resetClick=()=>{
+    if(inputBill > 0 || tipPercentage > 0 || people > 0){
+      setInputBill(0);
+      setTipPercentage(0);
+      setPeople(0);
+}
+  }
   return (
     <div className="app">
-      <div>
+      <div className="logoImg">
         <img src={logo} alt="logo" />
       </div>
 
@@ -58,13 +65,14 @@ function Splitter() {
                 <label className="billTitle">Bill</label>
               </div>
               <div className="inputIcon">
-              <img className="inputMoney" src={moneyImg} />
+              <img className="inputMoney" src={moneyImg} alt="moneyImg"/>
                 <input
                   placeholder="0"
                   type="number"
                   className="inputBox"
                   dir="rtl"
                   onChange={billAmountChange}
+                  value={inputBill}
                 ></input>
               </div>
 
@@ -102,7 +110,7 @@ function Splitter() {
                 </div>
 
                 <div className="inputIcon">
-                <img className="personIcon" src={personImage} />
+                <img className="personIcon" src={personImage} alt="personIcon" />
                   <input
                    placeholder="0"
                     type="number"
@@ -131,26 +139,31 @@ function Splitter() {
               <div className="tipResult">
                 <div>
                   <h3>Tip Amount</h3>
+                  <p className="personP">/person</p>
                 </div>
                 <div>
-                  <p>{showTip ? calculateTotalTip.toFixed(2) : "0.00"}</p>
+                  <p className="zero">{showTip ? calculateTotalTip.toFixed(2) : "0.00"}</p>
                 </div>
               </div>
               <div className="totalResult">
-                <div>
-                  <h3>Total Amount</h3>
+                <div className="totalDiv">
+                  <h3 >Total Amount</h3>
+                  <p className="personP">/person</p>
                 </div>
                 <div>
-                  {showTotal ? calculateTipPerPerson.toFixed(2) : "0.00"}
+                  <p className="zero">{showTotal ? calculateTipPerPerson.toFixed(2) : "0.00"}</p>
                 </div>
               </div>
-
-              <button className="resetButton">RESET</button>
+             <div className="resetButtonDiv"> <button 
+              className="resetButton"
+              onClick={resetClick}
+              >RESET</button></div>
             </div>
           </div>
         </div>
     </div>
   );
 }
+
 
 export default Splitter;
