@@ -59,9 +59,9 @@ function Splitter() {
         <img src={logo} alt="logo" />
       </div>
 
-      <div className="firstBox">
+      
           <div className="mainContainer">
-            <div>
+            <div className="firstBox">
               <div className="billDiv">
                 <label className="billTitle">Bill</label>
               </div>
@@ -135,7 +135,8 @@ function Splitter() {
                  
                 </div>
               </div>
-            </div>
+              </div>
+            
           {/* second box */}
 
           <div className="tipAmountContainer">
@@ -162,7 +163,8 @@ function Splitter() {
               onClick={resetClick}
               >RESET</button></div>
             </div>
-          </div>
+
+          
         </div>
     </div>
   );
