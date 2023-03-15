@@ -6,7 +6,7 @@ import logo from "./images/logo.png";
 
 function Splitter() {
   const tipBox= [5, 10, 15, 25, 50];
-  const [inputBill, setInputBill] = useState('null');
+  const [inputBill, setInputBill] = useState(null);
   const [tipPercentage, setTipPercentage] = useState(null);
   
   const [people, setPeople] = useState(null);
@@ -46,12 +46,11 @@ function Splitter() {
   }, [people]);
 
   const resetClick=()=>{
-    if(inputBill > 0 || tipPercentage > 0 || people > 0){
+    
       setInputBill(0);
       setTipPercentage(0);
       setPeople(0);
-}
-
+      
   }
   return (
     <div className="app">
@@ -160,6 +159,7 @@ function Splitter() {
               </div>
              <div className="resetButtonDiv"> <button 
               className="resetButton"
+              type="reset"
               onClick={resetClick}
               >RESET</button></div>
             </div>
