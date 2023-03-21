@@ -45,13 +45,13 @@ function Splitter() {
     }
   }, [people]);
 
-  const resetClick=()=>{
+  // const resetClick=()=>{
     
-      setInputBill(0);
-      setTipPercentage(0);
-      setPeople(0);
+  //     setInputBill(0);
+  //     setTipPercentage(0);
+  //     setPeople(0);
       
-  }
+  // }
   return (
     <div className="app">
       <div className="logoImg">
@@ -160,7 +160,7 @@ function Splitter() {
              <div className="resetButtonDiv"> <button 
               className="resetButton"
               type="reset"
-              onClick={resetClick}
+              // onClick={resetClick}
               >RESET</button></div>
             </div>
 
