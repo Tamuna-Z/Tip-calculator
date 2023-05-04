@@ -201,18 +201,14 @@ h3{
     background-color: #C5E4E7;
     width: 1440px;
     height: 1024px;
-    /* display: flex; */
-    /* justify-content:center;
-    align-items: center;
-    text-align: center; */
-    /* margin: 0 auto; */
-    padding-top:163px 260px 239px 260px;
+    /* padding:163px 260px 239px 260px; */
   }
+
   .mainContainer {
     background-color: #ffffff;
     width: 920px;
     height:481px;
-    margin-top: 304px;
+    /* margin-top: 104px; */
     box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
     border-radius: 25px;
     margin-left: 260px;
