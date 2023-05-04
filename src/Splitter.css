@@ -13,7 +13,6 @@ body{
   height: 933px;
   justify-content: center;
   align-items: center;
-  /* text-align: center; */
   margin: 0 auto;
   padding-top: 50px;
 }
@@ -24,7 +23,6 @@ body{
   margin-top: 40px;
   box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
   border-radius: 25px 25px 0px 0px;
-  /* align-content: flex-start; */
 }
 .logoImg{
   display: flex;
@@ -145,8 +143,6 @@ body{
   border-radius: 15px;
   background-color: #00474b;
   padding-top: 20px;
-  /* padding-left: 32px;
-  padding-right: 22px; */
   margin-top: 32px;
   margin-left: 24px;
   margin-bottom: 32px;
@@ -176,8 +172,6 @@ h3{
   font-size: 18px;
   line-height: 24px;
   color: #ffffff;
-  /* padding: 22px; */
-
 }
 .totalDiv{
   margin-top: 25px;
@@ -186,7 +180,6 @@ h3{
   display: flex;
   margin-top: 35px;
 }
-
 .resetButton {
   width: 281px;
   height: 48px;
@@ -201,7 +194,6 @@ h3{
     background-color: #C5E4E7;
     width: 1440px;
     height: 1024px;
-    /* padding:163px 260px 239px 260px; */
   }
 
   .mainContainer {
@@ -213,7 +205,6 @@ h3{
     border-radius: 25px;
     margin-left: 260px;
     display: flex;
-    /* align-content: flex-start; */
   }
   .buttonWrap{
     width: 379px;
