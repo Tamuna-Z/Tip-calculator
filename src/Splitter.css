@@ -206,6 +206,9 @@ h3{
     margin-left: 260px;
     display: flex;
   }
+  .logoImg{
+    margin-top:163px;
+  }
   .buttonWrap{
     width: 379px;
     height: 112px;
