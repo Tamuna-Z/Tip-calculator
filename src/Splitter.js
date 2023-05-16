@@ -9,7 +9,7 @@ function Splitter() {
   const [inputBill, setInputBill] = useState('');
   const [tipPercentage, setTipPercentage] = useState('');
 
-  const [people, setPeople] = useState(null);
+  const [people, setPeople] = useState('');
   const [clickedIndex, setClickedIndex] = useState('');
   const [peopleError, setPeopleError] = useState('');
 
