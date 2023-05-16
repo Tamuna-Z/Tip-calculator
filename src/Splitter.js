@@ -6,12 +6,12 @@ import logo from "./images/logo.png";
 
 function Splitter() {
   const tipBox = [5, 10, 15, 25, 50];
-  const [inputBill, setInputBill] = useState(null);
-  const [tipPercentage, setTipPercentage] = useState(null);
+  const [inputBill, setInputBill] = useState('');
+  const [tipPercentage, setTipPercentage] = useState('');
 
   const [people, setPeople] = useState(null);
-  const [clickedIndex, setClickedIndex] = useState(null);
-  const [peopleError, setPeopleError] = useState(null);
+  const [clickedIndex, setClickedIndex] = useState('');
+  const [peopleError, setPeopleError] = useState('');
 
   const colorChange = (index) => {
     setClickedIndex(index);
